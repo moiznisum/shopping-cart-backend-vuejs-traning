@@ -36,23 +36,7 @@ $ npm install
 
 ```bash
 # development
-$ npm run start
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+$ npm run dev
 ```
 
 ## Sample ENV
@@ -81,7 +65,7 @@ NodeJS is an MIT-licensed open source project. It can grow thanks to the sponsor
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
+- Author - [Muhammad Moiz Siddique](https://muhammadmoizsiddique.vercel.app)
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
 
