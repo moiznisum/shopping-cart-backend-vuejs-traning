@@ -1,74 +1,82 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://cdn.freebiesupply.com/logos/thumbs/2x/nodejs-1-logo.png" width="320" alt="Nest Logo" /></a>
-</p>
+# Backend API for Smart Shopping Cart
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Project Overview
+This is the **backend application** for the Smart Shopping Cart project. It provides RESTful APIs for **authentication, products, cart, orders, and favourites**. The backend is built with **Node.js, Express, and MongoDB** and integrates seamlessly with the Vue.js frontend.
 
-## Description
+---
 
-[NodeJS](https://github.com/nodejs/nodejs.org) framework TypeScript starter repository.
+## 🚀 Getting Started
 
-## Installation
+Follow these steps to set up and run the backend application locally:
 
-```bash
-$ npm install
-```
+For Reference you can follow this documentation: [Click Here](https://vinyldavyl.medium.com/how-to-create-a-database-in-mongodb-atlas-and-connect-your-database-to-your-application-step-by-9b63a2886b83)
 
-## Running the app
+### 1. Create a MongoDB Atlas Account
+- Sign up at [MongoDB Atlas Login]([https://www.mongodb.com/cloud/atlas](https://account.mongodb.com/account/login)).  
 
-```bash
-# development
-$ npm run dev
-```
+### 2. Create a Cluster
+- Follow the Atlas UI to create a free cluster.  
 
-## Sample ENV
+### 3. Create a Database
+- Create a new database and note the database name.  
 
-```
-APP_ID=********************
+### 4. Setup MongoDB Connection
+- Obtain your MongoDB connection string from Atlas.  
+- Create `.env` file on the root of the application:  
+
+```env
+
+APP_ID=shoppingcart
 PORT=9000
 LOG_LEVEL=debug
 REQUEST_LIMIT=100kb
 SESSION_SECRET=mySecret
 
-#JWT_SECRET_KEY
 JWT_SECRET=bezkoder-secret-key
 
-#Database
-MONGODB_URI=mongodb://localhost/ecommers-sample
+#DATABASE
+MONGODB_URI={UPDATE YOUR MONGODB URI HERE}
 
 debug=true
-whitelist_url=******************
+
+APP_HOST=https://localhost:3000
 
 ```
 
-## Support
 
-NodeJS is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Install Dependencies
 
-## Stay in touch
+```bash
 
-- Author - [Muhammad Moiz Siddique](https://muhammadmoizsiddique.vercel.app)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+npm install
+```
 
-## License
 
-  NodeJS is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+## Run the Application
+
+```bash
+
+npm run dev
+```
+- The backend server will start on [http://localhost:9000](http://localhost:9000/)
+
+
+## 📄 API Documentation
+
+After starting the server, access the Swagger API docs at:
+http://localhost:9000/api-docs/#/
+
+Here you can explore all endpoints, request/response schemas, and test the APIs directly.
+
+## 🛠️ Tech Stack
+
+- **Backend**: Node.js, Express
+- **Database**: MongoDB Atlas
+- **Authentication**: JWT
+- **Documentation**: Swagger
+
+
+## Author
+
+Muhammad Moiz Siddique
+Final Project - Smart Shopping Cart Backend
