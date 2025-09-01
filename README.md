@@ -3,7 +3,6 @@
 ## Project Overview
 This is the **backend application** for the Smart Shopping Cart project. It provides RESTful APIs for **authentication, products, cart, orders, and favourites**. The backend is built with **Node.js, Express, and MongoDB** and integrates seamlessly with the Vue.js frontend.
 
----
 
 ## 🚀 Getting Started
 
