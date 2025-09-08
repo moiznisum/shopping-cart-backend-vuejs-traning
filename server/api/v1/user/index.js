@@ -7,7 +7,7 @@
 
 /**
  * @swagger
- * /users:
+ * /user:
  *   get:
  *     summary: Get all users
  *     tags: [Users]
@@ -51,7 +51,7 @@
 
 /**
  * @swagger
- * /users/{id}:
+ * /user/{id}:
  *   get:
  *     summary: Get a user by ID
  *     tags: [Users]
