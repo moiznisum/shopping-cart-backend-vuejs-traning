@@ -111,7 +111,7 @@
 
 /**
  * @swagger
- * /api/products:
+ * /products:
  *   get:
  *     summary: Get all products
  *     tags: [Products]
@@ -142,7 +142,7 @@
  *       400:
  *         description: Invalid input
  *
- * /api/products/{id}:
+ * /products/{id}:
  *   get:
  *     summary: Get product by ID
  *     tags: [Products]
