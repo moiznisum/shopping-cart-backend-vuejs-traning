@@ -9,7 +9,7 @@
  * @swagger
  * /user:
  *   get:
- *     summary: Get all users
+ *     summary: Get all users (First Create use to get response from this api)
  *     tags: [Users]
  *     responses:
  *       200:
