@@ -35,6 +35,17 @@ class OrderController {
     }
   }
 
+  async getByUser(req, res) {
+    try {
+      const order = await OrderService.getByUser(req.user);
+      res.status(200).json(order);
+    } catch (error) {
+      logger.error(error);
+      l.error(error);
+      res.status(400).json({ message: error.message || "Error fetching order" });
+    }
+  }
+
   async update(req, res) {
     try {
       const order = await OrderService.update(req.params.id, req.body);
@@ -50,6 +61,28 @@ class OrderController {
     try {
       const order = await OrderService.delete(req.params.id);
       res.status(200).json({ message: "Order deleted successfully", order });
+    } catch (error) {
+      logger.error(error);
+      l.error(error);
+      res.status(400).json({ message: error.message || "Error deleting order" });
+    }
+  }
+
+  async cancelOrder(req, res) {
+    try {
+      const order = await OrderService.cancelOrder(req.params.id);
+      res.status(200).json({ message: "Order cancelled successfully", order });
+    } catch (error) {
+      logger.error(error);
+      l.error(error);
+      res.status(400).json({ message: error.message || "Error deleting order" });
+    }
+  }
+
+  async completeOrder(req, res) {
+    try {
+      const order = await OrderService.completeOrder(req.params.id);
+      res.status(200).json({ message: "Order marked as completed", order });
     } catch (error) {
       logger.error(error);
       l.error(error);
