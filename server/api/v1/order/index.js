@@ -105,7 +105,7 @@
  *         description: Invalid input
  *
  *   get:
- *     summary: Get all orders (Admin only)
+ *     summary: Get all orders
  *     tags: [Orders]
  *     security:
  *       - bearerAuth: []
@@ -160,44 +160,9 @@
  *       404:
  *         description: Order not found
  *
- *   patch:
- *     summary: Update order status (Admin only)
- *     tags: [Orders]
- *     security:
- *       - bearerAuth: []
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *         description: Order ID
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               status:
- *                 type: string
- *                 enum: [pending, processing, shipped, delivered, cancelled]
- *                 example: "processing"
- *               isCompleted:
- *                 type: boolean
- *                 example: true
- *               isCancelled:
- *                 type: boolean
- *                 example: false
- *     responses:
- *       200:
- *         description: Order updated successfully
- *       404:
- *         description: Order not found
- *
  * /orders/{id}/cancel:
  *   patch:
- *     summary: Cancel an order (User or Admin)
+ *     summary: Cancel an order
  *     tags: [Orders]
  *     security:
  *       - bearerAuth: []
@@ -217,7 +182,7 @@
  *
  * /orders/{id}/complete:
  *   patch:
- *     summary: Mark an order as completed (Admin only)
+ *     summary: Mark an order as completed
  *     tags: [Orders]
  *     security:
  *       - bearerAuth: []
@@ -246,8 +211,11 @@ router.post(
   isAuthenticated(),
   OrderController.create.bind(OrderController)
 );
+router.get("/user", isAuthenticated(), OrderController.getByUser.bind(OrderController));
 router.get("/:id", OrderController.getById.bind(OrderController));
 router.put("/:id", OrderController.update.bind(OrderController));
 router.delete("/:id", OrderController.delete.bind(OrderController));
+router.patch("/:id/cancel", OrderController.cancelOrder.bind(OrderController));
+router.patch("/:id/complete", OrderController.completeOrder.bind(OrderController));
 
 export default router;
